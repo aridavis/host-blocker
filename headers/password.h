@@ -3,7 +3,7 @@ string password = "";
 void readPassword()
 {
     string line;
-    ifstream file("config/.password");
+    ifstream file(env["PASSWORD_PATH"]);
 
     while (getline(file, line))
     {
@@ -35,7 +35,7 @@ void changePassword()
     else
     {
         ofstream file;
-        file.open("config/.password");
+        file.open(env["PASSWORD_PATH"]);
         file << pass;
         file.close();
     }
