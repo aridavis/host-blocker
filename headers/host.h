@@ -17,9 +17,9 @@ void readHosts()
 void writeHost()
 {
     string line;
-    for (auto &url : blockedUrls)
+    for (int i = 0; i < blockedUrls.size(); i++)
     {
-        line += "127.0.0.1 " + url + "\n";
+        line += "127.0.0.1 " + blockedUrls[i] + "\n";
     }
     sort(blockedUrls.begin(), blockedUrls.end());
     ofstream file;
@@ -33,16 +33,16 @@ void viewHosts()
     if (blockedUrls.empty())
     {
         printf("No entry found!");
-
         return;
     }
     sort(blockedUrls.begin(), blockedUrls.end());
     clear();
     printf("Blocked URL List\n");
     printf("================\n\n");
-    for (auto &url : blockedUrls)
+
+    for (int i = 0; i < blockedUrls.size(); i++)
     {
-        cout << url << endl;
+        cout << blockedUrls[i] << endl;
     }
 }
 
@@ -65,14 +65,15 @@ void deleteHost()
     getchar();
     bool found = false;
     int idx = 0;
-    for (auto &url : blockedUrls)
+    for (int i = 0; i < blockedUrls.size(); i++)
     {
-        if (url == s)
+        idx = i;
+        if (s == blockedUrls[i])
+            ;
         {
             found = true;
             break;
         }
-        idx++;
     }
 
     if (found)
@@ -108,9 +109,10 @@ void addHost()
         getchar();
     } while (url.length() < 1);
     bool found = false;
-    for (auto &u : blockedUrls)
+
+    for (int i = 0; i < blockedUrls.size(); i++)
     {
-        if (url == u)
+        if (url == blockedUrls[i])
         {
             found = true;
             break;
