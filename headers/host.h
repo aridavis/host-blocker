@@ -76,7 +76,6 @@ void deleteHost()
     {
         idx = i;
         if (s == blockedUrls[i])
-            ;
         {
             found = true;
             break;
@@ -96,6 +95,7 @@ void deleteHost()
         if (c == "Y" || c == "y")
         {
             blockedUrls.erase(blockedUrls.begin() + idx);
+            clear();
             printf("Success Deleting URL!\n");
             printf("Press enter to continue...\n");
             getchar();
@@ -135,7 +135,7 @@ void addHost()
     blockedUrls.push_back(url);
     writeHost();
     clear();
-    printf("Succes Blocking URL\n");
+    printf("Success Blocking URL\n");
     printf("Press enter to continue...\n");
     getchar();
 }
