@@ -3,6 +3,12 @@ void readEnv()
     string line;
     ifstream file("config/.env");
 
+    if (file == NULL)
+    {
+        printf("Env file not found");
+        exit(0);
+    }
+
     while (getline(file, line))
     {
         vector<string> splitted = split(trim(line), '=');

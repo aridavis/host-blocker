@@ -2,8 +2,15 @@ vector<string> blockedUrls;
 
 void readHosts()
 {
+
     string line;
     ifstream file(env["HOST_PATH"]);
+
+    if (file == NULL)
+    {
+        printf("Host file not found");
+        exit(0);
+    }
 
     while (getline(file, line))
     {

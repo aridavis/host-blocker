@@ -2,8 +2,8 @@
 using namespace std;
 
 #include "headers/util.h"
+#include "env.h"
 #include "headers/host.h"
-#include "headers/env.h"
 #include "headers/password.h"
 
 int main()

@@ -4,6 +4,11 @@ void readPassword()
 {
     string line;
     ifstream file(env["PASSWORD_PATH"]);
+    if (file == NULL)
+    {
+        printf("Password file not found");
+        exit(0);
+    }
 
     while (getline(file, line))
     {
