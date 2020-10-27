@@ -11,4 +11,5 @@ This is a program which I make to help my uncle block some websites during his c
 3. Open the .env file, and change your own configuration
 
 Feel free to use this program
+
 Written by: Ari Davis
